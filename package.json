@@ -1,0 +1,19 @@
+{
+  "name": "history-game",
+  "version": "1.0.0",
+  "description": "언어의 역사성 게임",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taemin-dev/history-game.git"
+  },
+  "author": "taemin-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taemin-dev/history-game/issues"
+  },
+  "homepage": "https://github.com/taemin-dev/history-game#readme"
+}
