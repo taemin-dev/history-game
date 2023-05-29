@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import rootRouter from "./routers/rootRouter";
+import gameRouter from "./routers/gameRouter";
 
 const app = express();
 
@@ -10,5 +11,6 @@ app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views")
 app.use(logger);
 app.use("/", rootRouter);
+app.use("/game", gameRouter);
 
 export default app;
