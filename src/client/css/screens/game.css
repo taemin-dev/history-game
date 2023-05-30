@@ -1,0 +1,16 @@
+.bubble {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble img {
+  width: 100%;
+  height: 100%;
+}
+
+.bubble span {
+  position: absolute;
+}

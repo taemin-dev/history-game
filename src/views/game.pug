@@ -1,8 +1,13 @@
 extends gameLayout.pug 
 
 block content
-  h1 game!
-  //img(src="img/bg.png")
+  div#game-screen
+    div#word
+      span 제시어
+    div#time
+      span 남은 시간
+      progress(value=40, max=60)
+    //img(src="img/bg.png")
 
 block scripts
   script(src="/static/js/game.js")
