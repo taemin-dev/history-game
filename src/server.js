@@ -12,6 +12,7 @@ app.set("views", process.cwd() + "/src/views")
 app.use(logger);
 app.use("/", rootRouter);
 app.use("/game", gameRouter);
-app.use("/img", express.static("img"))
+app.use("/img", express.static("img"));
+app.use("/static", express.static("src/client"));
 
 export default app;
