@@ -18,3 +18,8 @@
 
 <img src="img/screenshots/Day2-1.png">
 <img src="img/screenshots/Day2-2.png">
+
+# Day 3
+
+셋째날 한 것
+- 시간이 없는 관계로 게임 개발에 필요한 정보를 구글&유튜브에서 찾아보았다
