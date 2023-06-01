@@ -1,6 +1,22 @@
+@keyframes move-left {
+  from {}
+
+  to {
+    transform: translateX(-110vw);
+  }
+}
+
+@keyframes move-right {
+  from {}
+
+  to {
+    transform: translateX(110vw);
+  }
+}
+
 .bubble {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
