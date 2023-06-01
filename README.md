@@ -32,5 +32,5 @@
 - 비눗방울의 이동시간 무작위화
 - 비눗방울의 이동 전 지연시간 무작위화
 
-<a href="https://youtu.be/HwGZrWtMuww">동영상 링크</a>
+<a href="https://youtu.be/HwGZrWtMuww" target="_blank">동영상 링크</a>
 <img src="readmeFiles/Day4-2.png">
