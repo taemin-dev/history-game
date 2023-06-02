@@ -1,5 +1,18 @@
 const gameScreen = document.getElementById("game-screen");
 
+const handleBubbleClick = (event) => {
+  const bubble = event.target.parentElement;
+  bubble.style.animationPlayState = "paused";
+  removeEventListener("click", handleBubbleClick);
+  clearTimeout(bubble.id);
+
+  const span = bubble.querySelector("span");
+  span.innerText = "POP!";
+
+  const img = bubble.querySelector("img");
+  img.className = "hide";
+}
+
 const createBubble = (word) => {
   const duration = 10 + Math.floor(Math.random() * 6);
   const delay = Math.floor(Math.random() * 11);
@@ -16,15 +29,16 @@ const createBubble = (word) => {
   }
   bubble.style.animation = `move-${direction} ${duration}s linear`;
   bubble.style.animationDelay = `${delay}s`;
-  setTimeout(() => bubble.remove(), (duration + delay) * 1000);
+  bubble.addEventListener("click", handleBubbleClick);
+  bubble.id = setTimeout(() => bubble.remove(), (duration + delay) * 1000);
 
-  const wordName = document.createElement("span");
-  wordName.innerText = word;
+  const span = document.createElement("span");
+  span.innerText = word;
 
   const img = document.createElement("img");
   img.src = "img/bubble.png";
 
-  bubble.appendChild(wordName);
+  bubble.appendChild(span);
   bubble.appendChild(img);
   gameScreen.appendChild(bubble);
 };

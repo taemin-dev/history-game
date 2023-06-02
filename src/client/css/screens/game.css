@@ -29,4 +29,9 @@
 
 .bubble span {
   position: absolute;
+  font-size: 36px;
+}
+
+.hide {
+  opacity: 0;
 }
