@@ -32,5 +32,13 @@
 - 비눗방울의 이동시간 무작위화
 - 비눗방울의 이동 전 지연시간 무작위화
 
-<a href="https://youtu.be/HwGZrWtMuww" target="blank">동영상 링크</a>
+<a href="https://youtu.be/HwGZrWtMuww">동영상 링크</a>
 <img src="readmeFiles/Day4-2.png">
+
+# Day 5
+
+다섯째날 만든 것
+- 비눗방울 클릭 시 "POP!"이라는 글씨와 함께 비눗방울이 없어진다
+
+<a href="https://youtu.be/c8gdUXwNl04">동영상 링크</a>
+<img src="readmeFiles/Day5-2.png">
