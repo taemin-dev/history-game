@@ -42,3 +42,8 @@
 
 <a href="https://youtu.be/c8gdUXwNl04">동영상 링크</a>
 <img src="readmeFiles/Day5-2.png">
+
+# Day 6
+
+여섯째날 한 것
+- 워터파크 가서 놀고온 관계로 휴식
