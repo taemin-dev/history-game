@@ -47,3 +47,11 @@
 
 여섯째날 한 것
 - 워터파크 가서 놀고온 관계로 휴식
+
+# Day 7
+
+일곱째날 만든 것
+- 비눗방울 클릭 시 점수판에 50점이 더해진다
+
+<a href="https://youtu.be/MLAEZjE0El0">동영상 링크</a>
+<img src="readmeFiles/Day7-2.png">
