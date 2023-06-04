@@ -1,9 +1,16 @@
 const gameScreen = document.getElementById("game-screen");
+const scoreDiv = document.getElementById("score");
+const scoreSpan = scoreDiv.querySelector("span");
 
 const handleBubbleClick = (event) => {
-  const bubble = event.target.parentElement;
+  let bubble;
+  if (event.target.className === "bubble") {
+    bubble = event.target;
+  } else {
+    bubble = event.target.parentElement;
+  }
   bubble.style.animationPlayState = "paused";
-  removeEventListener("click", handleBubbleClick);
+  bubble.removeEventListener("click", handleBubbleClick);
   clearTimeout(bubble.id);
 
   const span = bubble.querySelector("span");
@@ -11,6 +18,10 @@ const handleBubbleClick = (event) => {
 
   const img = bubble.querySelector("img");
   img.className = "hide";
+
+  const score = parseInt(scoreSpan.dataset.score);
+  scoreSpan.innerText = `${score + 50}점`;
+  scoreSpan.dataset.score = score + 50;
 }
 
 const createBubble = (word) => {
