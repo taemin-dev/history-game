@@ -1,6 +1,8 @@
 const gameScreen = document.getElementById("game-screen");
 const scoreDiv = document.getElementById("score");
 const scoreSpan = scoreDiv.querySelector("span");
+const timeDiv = document.getElementById("time");
+const timeProgress = timeDiv.querySelector("progress");
 
 const handleBubbleClick = (event) => {
   let bubble;
@@ -53,6 +55,19 @@ const createBubble = (word) => {
   bubble.appendChild(img);
   gameScreen.appendChild(bubble);
 };
+
+const handleTimeProgress = () => {
+  if (timeProgress.value < 10) {
+    timeProgress.value = timeProgress.value + 1;
+  } else {
+    const a = document.createElement("a");
+    a.href = "/game/over";
+    document.body.append(a);
+    a.click();
+  }
+}
+
+setInterval(handleTimeProgress, 1 * 1000);
 
 createBubble("1");
 createBubble("2");
