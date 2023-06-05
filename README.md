@@ -55,3 +55,10 @@
 
 <a href="https://youtu.be/MLAEZjE0El0">동영상 링크</a>
 <img src="readmeFiles/Day7-2.png">
+
+# Day 8
+
+여덟째날 만든 것
+- 게임 시작시 진행바에 시간이 가며 시간이 다 지나면 게임 오버 화면으로 이동된다
+
+<a href="https://youtu.be/Xj5Z9qDocuU">동영상 링크</a>
