@@ -1,14 +1,14 @@
 extends gameLayout.pug 
 
 block content
-  div#game-screen
+  div#game-screen(data-words=words)
     div#word
       span 제시어
     div#score
       span(data-score="0") 0점
     div#time
       span 남은 시간
-      progress(value=0, max=10)
+      progress(value=0, max=60)
     //img(src="img/bg.png")
 
 block scripts

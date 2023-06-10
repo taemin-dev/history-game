@@ -1,8 +1,12 @@
 const gameScreen = document.getElementById("game-screen");
+const wordDiv = document.getElementById("word");
+const wordSpan = wordDiv.querySelector("span");
 const scoreDiv = document.getElementById("score");
 const scoreSpan = scoreDiv.querySelector("span");
 const timeDiv = document.getElementById("time");
 const timeProgress = timeDiv.querySelector("progress");
+
+const words = JSON.parse(gameScreen.dataset.words).words;
 
 const handleBubbleClick = (event) => {
   let bubble;
@@ -22,11 +26,16 @@ const handleBubbleClick = (event) => {
   img.className = "hide";
 
   const score = parseInt(scoreSpan.dataset.score);
-  scoreSpan.innerText = `${score + 50}점`;
-  scoreSpan.dataset.score = score + 50;
+  if (bubble.dataset.answer === "correct") {
+    scoreSpan.innerText = `${score + 200}점`;
+    scoreSpan.dataset.score = score + 200;
+  } else {
+    scoreSpan.innerText = `${score - 50}점`;
+    scoreSpan.dataset.score = score - 50;
+  }
 }
 
-const createBubble = (word) => {
+const createBubble = (word, answer) => {
   const duration = 10 + Math.floor(Math.random() * 6);
   const delay = Math.floor(Math.random() * 11);
   const direction = Math.floor(Math.random() * 2) ? 'left' : 'right';
@@ -44,6 +53,7 @@ const createBubble = (word) => {
   bubble.style.animationDelay = `${delay}s`;
   bubble.addEventListener("click", handleBubbleClick);
   bubble.id = setTimeout(() => bubble.remove(), (duration + delay) * 1000);
+  bubble.dataset.answer = answer;
 
   const span = document.createElement("span");
   span.innerText = word;
@@ -57,7 +67,7 @@ const createBubble = (word) => {
 };
 
 const handleTimeProgress = () => {
-  if (timeProgress.value < 10) {
+  if (timeProgress.value < 60) {
     timeProgress.value = timeProgress.value + 1;
   } else {
     const a = document.createElement("a");
@@ -69,8 +79,10 @@ const handleTimeProgress = () => {
 
 setInterval(handleTimeProgress, 1 * 1000);
 
-createBubble("1");
-createBubble("2");
-createBubble("3");
-createBubble("4");
-createBubble("5");
+words.forEach((word) => {
+  wordSpan.innerText = `제시어 : ${word.word}`;
+  createBubble(word.correct, "correct");
+  word.fakes.forEach((fakeWord) => {
+    createBubble(fakeWord, "wrong");
+  });
+})
