@@ -5,16 +5,11 @@ const scoreDiv = document.getElementById("score");
 const scoreSpan = scoreDiv.querySelector("span");
 const timeDiv = document.getElementById("time");
 const timeProgress = timeDiv.querySelector("progress");
+const bubbleDiv = document.getElementById("bubble");
 
 const words = JSON.parse(gameScreen.dataset.words).words;
 
-const handleBubbleClick = (event) => {
-  let bubble;
-  if (event.target.className === "bubble") {
-    bubble = event.target;
-  } else {
-    bubble = event.target.parentElement;
-  }
+const popBubble = (bubble) => {
   bubble.style.animationPlayState = "paused";
   bubble.removeEventListener("click", handleBubbleClick);
   clearTimeout(bubble.id);
@@ -24,6 +19,17 @@ const handleBubbleClick = (event) => {
 
   const img = bubble.querySelector("img");
   img.className = "hide";
+}
+
+const handleBubbleClick = (event) => {
+  let bubble;
+  if (event.target.className === "bubble") {
+    bubble = event.target;
+  } else {
+    bubble = event.target.parentElement;
+  }
+
+  finishWord();
 
   const score = parseInt(scoreSpan.dataset.score);
   if (bubble.dataset.answer === "correct") {
@@ -33,11 +39,19 @@ const handleBubbleClick = (event) => {
     scoreSpan.innerText = `${score - 50}점`;
     scoreSpan.dataset.score = score - 50;
   }
-}
+};
+
+const finishWord = () => {
+  bubbleDiv.childNodes.forEach((bubble) => popBubble(bubble));
+  setTimeout(() => {
+    bubbleDiv.textContent = "";
+    handleWord();
+  }, 3 * 1000);
+};
 
 const createBubble = (word, answer) => {
   const duration = 10 + Math.floor(Math.random() * 6);
-  const delay = Math.floor(Math.random() * 11);
+  const delay = Math.floor(Math.random() * 6);
   const direction = Math.floor(Math.random() * 2) ? 'left' : 'right';
 
   const bubble = document.createElement("div");
@@ -52,7 +66,10 @@ const createBubble = (word, answer) => {
   bubble.style.animation = `move-${direction} ${duration}s linear`;
   bubble.style.animationDelay = `${delay}s`;
   bubble.addEventListener("click", handleBubbleClick);
-  bubble.id = setTimeout(() => bubble.remove(), (duration + delay) * 1000);
+  bubble.id = setTimeout(() => {
+    bubble.remove();
+    finishWord();
+  }, (duration + delay) * 1000);
   bubble.dataset.answer = answer;
 
   const span = document.createElement("span");
@@ -63,7 +80,7 @@ const createBubble = (word, answer) => {
 
   bubble.appendChild(span);
   bubble.appendChild(img);
-  gameScreen.appendChild(bubble);
+  bubbleDiv.appendChild(bubble);
 };
 
 const handleTimeProgress = () => {
@@ -75,14 +92,25 @@ const handleTimeProgress = () => {
     document.body.append(a);
     a.click();
   }
-}
+};
 
 setInterval(handleTimeProgress, 1 * 1000);
 
-words.forEach((word) => {
-  wordSpan.innerText = `제시어 : ${word.word}`;
-  createBubble(word.correct, "correct");
-  word.fakes.forEach((fakeWord) => {
-    createBubble(fakeWord, "wrong");
-  });
-})
+const handleWord = () => {
+  let index;
+  let word;
+  if (words.length !== 0) {
+    console.log("hello");
+    index = Math.floor(Math.random() * words.length);
+    word = words[index];
+    words.splice(index, 1);
+
+    wordSpan.innerText = `제시어 : ${word.word}`;
+    createBubble(word.correct, "correct");
+    word.fakes.forEach((fakeWord) => {
+      createBubble(fakeWord, "wrong");
+    });
+  };
+}
+
+handleWord();
