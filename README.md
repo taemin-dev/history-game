@@ -95,3 +95,13 @@
 
 <a href="https://youtu.be/MX-424Vp82I">동영상 링크</a>
 <img src="readmeFiles/Day13-2.png">
+
+# Day 14
+
+열네번째날 만든 것
+- 제시어를 늘렸다
+- 비눗방울이 끝에 다다르거나 비눗방울을 터뜨렸을때 다른 비눗방울들도 터진 후 사라진 뒤 새로운 제시어가 나온다
+
+<a href="https://youtu.be/4U6ICw0L_UU">동영상 링크</a>
+<img src="readmeFiles/Day14-2.png">
+<img src="readmeFiles/Day14-3.png">
