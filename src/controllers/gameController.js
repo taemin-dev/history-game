@@ -5,5 +5,6 @@ export const game = (req, res) => {
 };
 
 export const gameover = (req, res) => {
-  return res.render("gameover", { pageTitle: "게임오버" });
+  const score = req.query.score;
+  return res.render("gameover", { pageTitle: "게임오버", score });
 };
