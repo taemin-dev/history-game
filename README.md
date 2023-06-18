@@ -100,3 +100,10 @@
 - 게임오버 화면에서 최종 점수가 나온다
 
 <img src="readmeFiles/Day19-1.png">
+
+# Day 20
+
+- 엔딩 크레딧 페이지를 만들었다 (현재 작동 X)
+
+<a href="https://youtu.be/WfKJdYj3AWY">동영상 링크</a>
+<img src="readmeFiles/Day20-2.png">
