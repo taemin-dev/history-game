@@ -107,3 +107,7 @@
 
 <a href="https://youtu.be/WfKJdYj3AWY">동영상 링크</a>
 <img src="readmeFiles/Day20-2.png">
+
+# Day 21
+
+- 시간이 없는 관계로 휴식
