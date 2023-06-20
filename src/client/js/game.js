@@ -88,7 +88,11 @@ const handleTimeProgress = () => {
     timeProgress.value = timeProgress.value + 1;
   } else {
     const a = document.createElement("a");
-    a.href = `/game/over?score=${scoreSpan.dataset.score}`;
+    if (scoreSpan.dataset.score >= 1000) {
+      a.href = `/game/credit?score=${scoreSpan.dataset.score}`;
+    } else {
+      a.href = `/game/over?score=${scoreSpan.dataset.score}`;
+    }
     document.body.append(a);
     a.click();
   }
