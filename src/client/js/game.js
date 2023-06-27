@@ -104,7 +104,6 @@ const handleWord = () => {
   let index;
   let word;
   if (words.length !== 0) {
-    console.log("hello");
     index = Math.floor(Math.random() * words.length);
     word = words[index];
     words.splice(index, 1);
