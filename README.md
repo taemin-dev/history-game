@@ -119,3 +119,9 @@
 # Day 23 ~ 28
 
 - 휴식
+
+# Day 29
+
+- 화면에 배경 이미지를 추가했다
+
+<img src="readmeFiles/Day29-1.png">
