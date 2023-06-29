@@ -125,3 +125,7 @@
 - 화면에 배경 이미지를 추가했다
 
 <img src="readmeFiles/Day29-1.png">
+
+# Day 30
+
+- 휴식
