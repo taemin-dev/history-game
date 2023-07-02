@@ -126,6 +126,6 @@
 
 <img src="readmeFiles/Day29-1.png">
 
-# Day 30 ~ 31
+# Day 30 ~ 32
 
 - 휴식
