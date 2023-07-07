@@ -1,0 +1,17 @@
+.home__h1 {
+  position: absolute;
+  top: 240px;
+}
+
+.links-div {
+  position: absolute;
+  bottom: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links-div a:first-child {
+  margin-bottom: 20px;
+}

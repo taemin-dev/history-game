@@ -1,7 +1,8 @@
 extends homeLayout.pug
 
 block content
-  h1 『박태민뎐』 2023
-  a(href="/tutorial") Tutorial
-  br
-  a(href="/game") Game Start
+  h1.home__h1 『박태민뎐』 2023
+  div.links-div
+    a(href="/tutorial").link-button Tutorial
+    a(href="/game").link-button Game Start
+  img(src="img/home-bg.png").home-bg
