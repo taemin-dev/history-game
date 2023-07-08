@@ -140,3 +140,10 @@
 # Day 35 ~ 38
 
 - 휴식
+
+# Day 39
+
+- 홈 화면 디자인
+- 그 외 기타 디자인 작업
+
+<img src="readmeFiles/Day39-1.png">
